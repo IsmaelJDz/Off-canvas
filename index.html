@@ -17,13 +17,13 @@
 	<section class="Canvas">
 		<header class="Header verde_A is-active">
 			<h1 class="Header-logo">Off Canvas</h1>
-			<button class="Header-button is-active">
+			<button class="Header-button is-active" id="showMenu">
 				Mostrar Menú
 			</button>
-			<button class="Header-button">
+			<button class="Header-button" id="hideMenu">
 				Ocultar Menú
 			</button>
-			<ul class="MainMenu">
+			<ul class="MainMenu" id="menu">
 				<li class="MainMenu-item">
 					<a href="" class="MainMenu-link">
 						Cursos
@@ -56,5 +56,26 @@
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem tenetur, quas quod at, temporibus libero sit consectetur assumenda, accusantium excepturi, inventore! Excepturi recusandae quas praesentium quis, illo! Modi, dolorum?
 		</div>
 	</section>
+	<script>
+			var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var showMenu = function() {
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			}
+
+			var hideMenu = function(){
+				$buttonShowMenu.classList.add('is-active');
+				$buttonHideMenu.classList.remove('is-active');
+				$menu.classList.remove('is-active');
+			}
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+	</script>
 </body>
 </html>
