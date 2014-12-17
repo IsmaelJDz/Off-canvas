@@ -56,10 +56,15 @@
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem tenetur, quas quod at, temporibus libero sit consectetur assumenda, accusantium excepturi, inventore! Excepturi recusandae quas praesentium quis, illo! Modi, dolorum?
 		</div>
 	</section>
+	<script src="hammer.min.js"></script>
 	<script>
 			var $buttonShowMenu = document.getElementById('showMenu');
 			var $buttonHideMenu = document.getElementById('hideMenu');
 			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
 
 			var showMenu = function() {
 				$buttonShowMenu.classList.remove('is-active');
@@ -75,6 +80,9 @@
 
 			$buttonShowMenu.addEventListener("click", showMenu);
 			$buttonHideMenu.addEventListener("click", hideMenu);
+
+			body.on('panright', showMenu);
+			body.on('panleft', hideMenu);
 
 	</script>
 </body>
